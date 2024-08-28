@@ -50,8 +50,10 @@ jack = { version = "0.11", optional = true }
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
 core-foundation-sys = "0.8.2" # For linking to CoreFoundation.framework and handling device name `CFString`s.
 mach2 = "0.4" # For access to mach_timebase type.
-screencapturekit = "0.2.8"
-screencapturekit-sys = "0.2.8"
+# screencapturekit = "0.2.8"
+# screencapturekit-sys = "0.2.8"
+screencapturekit = { git = "https://github.com/mediar-ai/screencapturekit-rs" }
+screencapturekit-sys = { git = "https://github.com/mediar-ai/screencapturekit-rs" }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 coreaudio-rs = { version = "0.11", default-features = false, features = ["audio_unit", "core_audio"] }
