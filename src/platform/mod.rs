@@ -607,8 +607,14 @@ mod platform_impl {
         Stream as CoreAudioStream, SupportedInputConfigs as CoreAudioSupportedInputConfigs,
         SupportedOutputConfigs as CoreAudioSupportedOutputConfigs,
     };
+    pub use crate::host::screencapturekit::{
+        Device as ScreenCaptureKitDevice, Devices as ScreenCaptureKitDevices,
+        Host as ScreenCaptureKitHost, Stream as ScreenCaptureKitStream,
+        SupportedInputConfigs as ScreenCaptureKitSupportedInputConfigs,
+        SupportedOutputConfigs as ScreenCaptureKitSupportedOutputConfigs,
+    };
 
-    impl_platform_host!(CoreAudio coreaudio "CoreAudio");
+    impl_platform_host!(CoreAudio coreaudio "CoreAudio", ScreenCaptureKit screencapturekit "ScreenCaptureKit");
 
     /// The default host for the current compilation target platform.
     pub fn default_host() -> Host {
