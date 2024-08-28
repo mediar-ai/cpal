@@ -95,3 +95,6 @@ name = "record_wav"
 
 [[example]]
 name = "synth_tones"
+
+[[example]]
+name = "macos_audio_output"
